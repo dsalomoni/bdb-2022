@@ -13,7 +13,7 @@ For more information on the course, see [here](https://www.unibo.it/it/didattica
 
 ## Command to start the Jupyter notebook
 
-Remember to **change the password** to access Jupyter (parameter `JUPYTER_TOKEN` in the command below. Once the docker container is started,
+Remember to **change the password** to access Jupyter (parameter `JUPYTER_TOKEN` in the command below). Once the docker container is started,
 connect to http://127.0.0.1:8888.
 
 ### If you run Linux or MacOS:
