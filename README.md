@@ -7,11 +7,11 @@ For details, see the course slides.
 
 For more information on the course, see [here](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/366280).
 
-## Command to start the Jupyter notebook
-
-### Create a docker network to connect to (all operating systems):
+## Create a docker network
 
 `docker network create bdb-net`
+
+## Command to start the Jupyter notebook
 
 ### If you run Linux or MacOS:
 
