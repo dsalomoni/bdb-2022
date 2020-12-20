@@ -23,5 +23,10 @@ For more information on the course, see [here](https://www.unibo.it/it/didattica
 
 ## Command to run the redis server
 
-`docker run -d --rm --name my_redis -v /Users/davide/bdb:/data --network bdb-net redis redis-server --maxmemory 32mb`
+### If you run Linux or MacOS:
 
+`docker run -d --rm --name my_redis -v $HOME/bdb:/data --network bdb-net redis redis-server --maxmemory 32mb`
+
+### If you run Windows 10:
+
+`docker run -d --rm --name my_redis -v C:\bdb:/data --network bdb-net redis redis-server --maxmemory 32mb`
