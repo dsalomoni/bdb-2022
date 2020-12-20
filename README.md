@@ -13,6 +13,9 @@ For more information on the course, see [here](https://www.unibo.it/it/didattica
 
 ## Command to start the Jupyter notebook
 
+Remember to **change the password** to access Jupyter (parameter `JUPYTER_TOKEN` in the command below. Once the docker container is started,
+connect to http://127.0.0.1:8888.
+
 ### If you run Linux or MacOS:
 
 `docker run -d --rm --name my_jupyter -v $HOME/bdb:/home/jovyan -p 8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" jupyter/datascience-notebook`
