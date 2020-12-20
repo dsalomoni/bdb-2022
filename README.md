@@ -7,7 +7,7 @@ For details, see the course slides.
 
 For more information on the course, see [here](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/366280).
 
-## Commands to run the Jupyter notebook
+## Command to run the Jupyter notebook
 
 ### Create a docker network to connect to (all operating systems):
 
@@ -20,3 +20,8 @@ For more information on the course, see [here](https://www.unibo.it/it/didattica
 ### If you run Windows 10:
 
 `docker run -d --rm --name my_jupyter -v C:\bdb:/home/jovyan -p 8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" jupyter/datascience-notebook`
+
+## Command to run the redis server
+
+`docker run -d --rm --name my_redis -v /Users/davide/bdb:/data --network bdb-net redis redis-server --maxmemory 32mb`
+
