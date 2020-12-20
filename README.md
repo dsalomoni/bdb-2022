@@ -28,8 +28,8 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 
 ### If you run Linux or MacOS:
 
-`docker run -d --rm --name my_redis -v $HOME/bdb:/data --network bdb-net redis redis-server --maxmemory 32mb`
+`docker run -d --rm --name my_redis -v $HOME/bdb:/data --network bdb-net redis redis-server --maxmemory 32mb --maxmemory-policy allkeys-lru`
 
 ### If you run Windows 10:
 
-`docker run -d --rm --name my_redis -v C:\bdb:/data --network bdb-net redis redis-server --maxmemory 32mb`
+`docker run -d --rm --name my_redis -v C:\bdb:/data --network bdb-net redis redis-server --maxmemory 32mb --maxmemory-policy allkeys-lru`
