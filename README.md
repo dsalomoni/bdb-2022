@@ -7,6 +7,22 @@ For details, see the course slides.
 
 For more information on the course, see [here](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/366280).
 
+## Install Docker
+
+Refer to the course slides for information on how to do that.
+
+## Create a local directory
+
+We are going to create a directory local to our laptop/PC called _bdb_.
+
+### If you run Linux or MacOS:
+
+`mkdir $HOME/bdb`
+
+### If you run Windows 10:
+
+`mkdir %USERPROFILE%\bdb`
+
 ## Create a docker network
 
 `docker network create bdb-net`
@@ -22,7 +38,7 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 
 ### If you run Windows 10:
 
-`docker run -d --rm --name my_jupyter -v C:\bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" jupyter/datascience-notebook`
+`docker run -d --rm --name my_jupyter -v %USERPROFILE%\bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" jupyter/datascience-notebook`
 
 ## Command to start the redis server
 
@@ -37,7 +53,7 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 ### If you run Windows 10:
 
 #### Without persistence:
-`docker run -d --rm --name my_redis -v C:\bdb:/data --network bdb-net redis redis-server --maxmemory 32mb --maxmemory-policy allkeys-lru`
+`docker run -d --rm --name my_redis -v %USERPROFILE%\bdb:/data --network bdb-net redis redis-server --maxmemory 32mb --maxmemory-policy allkeys-lru`
 
 #### With persistence:
-`docker run -d --rm --name my_redis -v C:\bdb:/data --network bdb-net redis redis-server --maxmemory 32mb --save 180 1 --dbfilename my_database.rdb`
+`docker run -d --rm --name my_redis -v %USERPROFILE%\bdb:/data --network bdb-net redis redis-server --maxmemory 32mb --save 180 1 --dbfilename my_database.rdb`
