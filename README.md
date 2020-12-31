@@ -7,13 +7,11 @@ For details, see the course slides.
 
 For more information on the course, see [here](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2020/366280).
 
-
-## Install Docker
-## Create a docker network
+## Install Docker
 
 Refer to the course slides for information on how to do that.
 
-## Create a local directory
+## Create a local directory
 
 We are going to create a directory local to our laptop/PC called _bdb_.
 
