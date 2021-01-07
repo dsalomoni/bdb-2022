@@ -27,7 +27,7 @@ We are going to create a directory local to our laptop/PC called _bdb_.
 
 `docker network create bdb-net`
 
-## Command to start the Jupyter notebook
+## Start the Jupyter notebook
 
 Remember to **change the password** to access Jupyter (parameter `JUPYTER_TOKEN` in the command below). Once the docker container is started,
 connect to http://127.0.0.1:8888. Note that with the command below access is only permitted from the PC where docker is running.
@@ -40,7 +40,7 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 
 `docker run -d --rm --name my_jupyter -v %USERPROFILE%\bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" jupyter/datascience-notebook`
 
-## Command to start the redis server
+## Start the redis server
 
 ### If you run Linux or MacOS:
 
