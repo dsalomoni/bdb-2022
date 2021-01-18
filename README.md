@@ -34,11 +34,11 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 
 ### If you run Linux or MacOS:
 
-`docker run -d --rm --name my_jupyter -v $HOME/bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
+`docker run -d --rm --name my_jupyter -v $HOME/bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
 
 ### If you run Windows 10:
 
-`docker run -d --rm --name my_jupyter -v %USERPROFILE%\bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
+`docker run -d --rm --name my_jupyter -v %USERPROFILE%\bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
 
 ## Start the redis server
 
