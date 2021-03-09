@@ -25,12 +25,14 @@ We are going to create a directory local to our laptop/PC called _bdb_.
 
 ## Create a docker network
 
+This is a Docker virtual network used by the containers that you will instantiate in this course.
+
 `docker network create bdb-net`
 
 ## Start the Jupyter notebook
 
-Remember to **change the password** to access Jupyter (parameter `JUPYTER_TOKEN` in the command below). Once the docker container is started,
-connect to http://127.0.0.1:8888. Note that with the command below access is only permitted from the PC where docker is running.
+Remember to **change the password** to access Jupyter (parameter `JUPYTER_TOKEN` in the command below). Once the Docker container is started,
+connect to http://127.0.0.1:8888. Note that with the command below access is only permitted from the PC where Docker is running.
 
 ### If you run Linux or MacOS:
 
@@ -57,3 +59,28 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 
 #### With persistence:
 `docker run -d --rm --name my_redis -v %USERPROFILE%\bdb:/data --network bdb-net --user 1000 redis redis-server --maxmemory 32mb --save 180 1 --dbfilename my_database.rdb`
+
+## Possible issues with the `docker` commands and how to fix them:
+
+### A `docker run` command fails, or the `bdb` directory is not visible from Jupyter
+
+- Make sure you type the `docker run` commands exactly as written in these instructions. 
+- Double check that you have create the Docker virtual network with the `docker network create` command above. 
+- **Pay special attention** to the the single quote (') and double quote (") characters, since they are prone to be copied wrongly with  "copy/paste" actions. If you copy/paste the commands above, manually type any single of double quote characters.
+
+### `docker run` returns `docker: Error response from daemon: Conflict. The container name "/my_jupyter" is already in use ...`
+
+- Type `docker stop my_jupyter`
+- Type `docker rm my_jupyter`
+- Type the `docker run` command again.
+
+### On Windows you get the message `"Error response ... : file exists."`
+ 
+ If **on Windows** you get an error like the following when typing a `docker run` command:
+> Error response from daemon: error while creating mount source path ... file exists.
+
+you should restart the Docker daemon. Open the "Docker Desktop" application from the Windows main menu. If any updates to Docker are mentioned, apply them. After these updates (if any), make sure you select the option to restart the Docker daemon. Then issue the `docker run` command again.
+
+### Other errors
+
+If you encounter other errors, contact prof. Salomoni through the usual University channels.
