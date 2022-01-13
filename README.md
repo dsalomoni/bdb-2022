@@ -9,7 +9,7 @@ For more information on the course, see [here](https://www.unibo.it/it/didattica
 
 ## Install Docker
 
-Refer to the course slides for information on how to do that.
+Refer to the course slides for instructions on how to do that.
 
 ## Create a local directory
 
