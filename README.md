@@ -19,7 +19,7 @@ We are going to create a directory local to our laptop/PC called _bdb_.
 
 `mkdir $HOME/bdb`
 
-### If you run Windows 10:
+### If you run Windows 10/11:
 
 `mkdir %USERPROFILE%\bdb`
 
@@ -38,7 +38,7 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 
 `docker run -d --rm --name my_jupyter -v $HOME/bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_ENABLE_LAB=yes -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
 
-### If you run Windows 10:
+### If you run Windows 10/11:
 
 `docker run -d --rm --name my_jupyter -v %USERPROFILE%\bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_ENABLE_LAB=yes -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
 
@@ -52,7 +52,7 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 #### With persistence:
 `docker run -d --rm --name my_redis -v $HOME/bdb:/data --network bdb-net --user 1000 redis redis-server --maxmemory 32mb --save 180 1 --dbfilename my_database.rdb`
 
-### If you run Windows 10:
+### If you run Windows 10/11:
 
 #### Without persistence:
 `docker run -d --rm --name my_redis -v %USERPROFILE%\bdb:/data --network bdb-net --user 1000 redis redis-server --maxmemory 32mb --maxmemory-policy allkeys-lru`
