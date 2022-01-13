@@ -74,12 +74,30 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 - Type `docker rm my_jupyter`
 - Type the `docker run` command again.
 
-### On Windows you get the message `"Error response ... : file exists."`
+### On Windows, you get the message `"Error response ... : file exists."`
  
  If **on Windows** you get an error like the following when typing a `docker run` command:
 > Error response from daemon: error while creating mount source path ... file exists.
 
 you should restart the Docker daemon. Open the "Docker Desktop" application from the Windows main menu. If any updates to Docker are mentioned, apply them. After these updates (if any), make sure you select the option to restart the Docker daemon. Then issue the `docker run` command again.
+
+### On Windows, after you install Docker Desktop you cannot run VirtualBox VMs anymore
+
+This is a Windows issue that does not always happen. If you do not have VirtualBox installed, or if VirtualBox and Docker both work on your system, skip this part. 
+
+If you have the issue, however, unfortunately there is only a workaround that seems to work, and that is to enable **either** Docker Desktop **or** VirtualBox. You can have both installed on your system, but only one at a time can be enabled.
+
+Enabling one or the other is done via this procedure:
+
+1. open the Windows Control Panel
+2. search for the string "Windows features" and select the item "Turn Windows features on or off".
+
+Now, in the windows that opens up:
+
+- **if you want to use VirtualBox**, _deselect_ the items called "Virtual machine platform" and "Windows Hypervisor Platformn" and then click "OK". 
+- **if you want to use Docker**, _select_ the items called "Virtual machine platform" and "Windows Hypervisor Platformn" and then click "OK". 
+
+In either case, you will have to reboot your system. When Windows boots up again, you will be able to run either VirtualBox or Docker, depedning on whether you deselected or selected the items above. If you find a different way to handle this issue, please let prof. Salomoni know.
 
 ### Other errors
 
