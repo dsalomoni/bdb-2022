@@ -89,13 +89,15 @@ If you have the issue, however, unfortunately there is only a workaround that se
 
 Enabling one or the other is done via this procedure:
 
-1. open the Windows Control Panel
-2. search for the string "Windows features" and select the item "Turn Windows features on or off".
+1. open the Windows Control Panel (in Italian: Impostazioni)
+2. search for the string "Windows features" and select the item "Turn Windows features on or off". Those with an Italian version of Windows may search for the string "Attiva o disattiva funzionalità di Windows".
 
 Now, in the windows that opens up:
 
 - **if you want to use VirtualBox**, _deselect_ the items called "Virtual machine platform" and "Windows Hypervisor Platformn" and then click "OK". 
 - **if you want to use Docker**, _select_ the items called "Virtual machine platform" and "Windows Hypervisor Platformn" and then click "OK". 
+
+Those with an Italian version of Windows will see the two items mentioned above translated as "Piattaforma macchina virtuale" and "Piattaforma Windows Hypervisor".
 
 In either case, you will have to reboot your system. When Windows boots up again, you will be able to run either VirtualBox or Docker, depedning on whether you deselected or selected the items above. If you find a different way to handle this issue, please let prof. Salomoni know.
 
