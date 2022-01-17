@@ -60,7 +60,7 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 #### With persistence:
 `docker run -d --rm --name my_redis -v %USERPROFILE%\bdb:/data --network bdb-net --user 1000 redis redis-server --maxmemory 32mb --save 180 1 --dbfilename my_database.rdb`
 
-## Possible issues with the `docker` commands and how to fix them:
+## Possible issues with Docker and how to fix them:
 
 ### A `docker run` command fails, or the `bdb` directory is not visible from Jupyter
 
