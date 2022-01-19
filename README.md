@@ -21,7 +21,11 @@ We are going to create a directory local to our laptop/PC called _bdb_.
 
 ### If you run Windows 10/11:
 
-`mkdir %USERPROFILE%\bdb`
+**Note: changed on 19/1/2022, make sure you follow the instructions below!**
+
+`mkdir C:\bdb`
+
+This creates the folder called 'bdb' directly under the root of your C: drive. You should be able to see the bdb folder if you go to "My Computer", and then select the "C:" drive. Copy to this folder the files you want to make visible to Jupyter.
 
 ## Create a docker network
 
@@ -40,7 +44,9 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 
 ### If you run Windows 10/11:
 
-`docker run -d --rm --name my_jupyter -v %USERPROFILE%\bdb:/home/jovyan -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_ENABLE_LAB=yes -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
+**Note: changed on 19/1/2022, make sure you follow the instructions below!**
+
+`docker run -d --rm --name my_jupyter --mount src=C:\bdb,dst=/home/jovyan,type=bind -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_ENABLE_LAB=yes -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
 
 ## Start the redis server
 
@@ -55,10 +61,10 @@ connect to http://127.0.0.1:8888. Note that with the command below access is onl
 ### If you run Windows 10/11:
 
 #### Without persistence:
-`docker run -d --rm --name my_redis -v %USERPROFILE%\bdb:/data --network bdb-net --user 1000 redis redis-server --maxmemory 32mb --maxmemory-policy allkeys-lru`
+`docker run -d --rm --name my_redis --mount src=C:\bdb,dst=/data,type=bind --network bdb-net --user 1000 redis redis-server --maxmemory 32mb --maxmemory-policy allkeys-lru`
 
 #### With persistence:
-`docker run -d --rm --name my_redis -v %USERPROFILE%\bdb:/data --network bdb-net --user 1000 redis redis-server --maxmemory 32mb --save 180 1 --dbfilename my_database.rdb`
+`docker run -d --rm --name my_redis --mount src=C:\bdb,dst=/data,type=bind --network bdb-net --user 1000 redis redis-server --maxmemory 32mb --save 180 1 --dbfilename my_database.rdb`
 
 ## Possible issues with Docker and how to fix them:
 
