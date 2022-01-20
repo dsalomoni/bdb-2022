@@ -107,6 +107,13 @@ Those with an Italian version of Windows will see the two items mentioned above 
 
 In either case, you will have to reboot your system. When Windows boots up again, you will be able to run either VirtualBox or Docker, depedning on whether you deselected or selected the items above. If you find a different way to handle this issue, please let prof. Salomoni know.
 
+### On Windows, you get the message `"docker_engine: Access is denied"`
+
+This error may be due to several causes:
+
+- make sure that Docker Desktop is properly installed and that when you open it it says "Docker is running". If Docker cannot start, make sure you have applied all suggested updates, including (if you are prompted about that) the "Windows Subsystem for Linux 2", or WSL 2. If all updates have been applied, deinstall and reinstall the Docker Desktop application, rebooting when prompted to do so.
+- make sure you run the Windows terminal as "administrator". 
+
 ### Other errors
 
 If you encounter other errors, contact prof. Salomoni through the usual University channels.
