@@ -21,7 +21,7 @@ We are going to create a directory local to our laptop/PC called _bdb_.
 
 ### If you run Windows 10/11:
 
-**Note: changed on 19/1/2022, make sure you follow the instructions below!**
+**Note: changed on 19/1/2022, make sure you copy the line below!**
 
 `mkdir C:\bdb`
 
@@ -44,7 +44,7 @@ connect to http://127.0.0.1:8888. Note anyway that with the command below access
 
 ### If you run Windows 10/11:
 
-**Note: changed on 19/1/2022, make sure you follow the instructions below!**
+**Note: changed on 19/1/2022, make sure you copy the line below!**
 
 `docker run -d --rm --name my_jupyter --mount src=C:\bdb,dst=/home/jovyan,type=bind -p 127.0.0.1:8888:8888 --network bdb-net -e JUPYTER_ENABLE_LAB=yes -e JUPYTER_TOKEN="bdb_password" --user root -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS="-R" jupyter/datascience-notebook`
 
