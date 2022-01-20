@@ -36,7 +36,7 @@ This is a Docker virtual network used by the containers that you will instantiat
 ## Start the Jupyter notebook
 
 Remember to **change the password** to access Jupyter (parameter `JUPYTER_TOKEN` in the command below). Once the Docker container is started,
-connect to http://127.0.0.1:8888. Note that with the command below access is only permitted from the PC where Docker is running.
+connect to http://127.0.0.1:8888. Note anyway that with the command below access is only permitted from the PC where Docker is running.
 
 ### If you run Linux or MacOS:
 
