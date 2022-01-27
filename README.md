@@ -116,7 +116,7 @@ This error may be due to several reasons:
 
 ### On Windows, you get the message `"Docker failed to initialize"` when running Docker Desktop
 
-This error may be due to several reasons. A possible workaround is described at https://github.com/docker/for-win/issues/3088, where it is suggested to delete the directory `C:\Users\xxxxxxx\AppData\Roaming\Docker` (replace xxxxxxx with your username).
+This error may be due to several reasons. A possible workaround is described at https://github.com/docker/for-win/issues/3088, where it is suggested to delete the directory `C:\Users\xxxxxxx\AppData\Roaming\Docker` (replace `xxxxxxx` with your username).
 
 ### Other errors
 
