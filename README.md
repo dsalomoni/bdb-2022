@@ -109,10 +109,14 @@ In either case, you will have to reboot your system. When Windows boots up again
 
 ### On Windows, you get the message `"docker_engine: Access is denied"`
 
-This error may be due to several causes:
+This error may be due to several reasons:
 
 - make sure that Docker Desktop is properly installed and that when you open it it says "Docker is running". If Docker cannot start, make sure you have applied all suggested updates, including (if you are prompted about that) the "Windows Subsystem for Linux 2", or WSL 2. If all updates have been applied, deinstall and reinstall the Docker Desktop application, rebooting when prompted to do so.
 - make sure you run the Windows terminal as "administrator". 
+
+### On Windows, you get the message `"Docker failed to initialize"` when running Docker Desktop
+
+This error may be due to several reasons. A possible workaround is described at https://github.com/docker/for-win/issues/3088, where it is suggested to delete the directory `C:\Users\xxxxxxx\AppData\Roaming\Docker` (replace xxxxxxx with your username).
 
 ### Other errors
 
